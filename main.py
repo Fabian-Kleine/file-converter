@@ -12,14 +12,16 @@ frame.pack()
 frame2 = Frame(root)
 frame2.pack()
 
-text = Text(frame2, font=(25))
+text = Text(frame2, font=(25), state= DISABLED)
 file_path_label = Label(frame2, font=(25), foreground= "#000", text="File Path:", anchor="e")
 
 def openFileDialog():
     file_path = filedialog.askopenfilename()
-    if (file_path): 
+    if (file_path):
+        text.config(state= NORMAL)
         text.delete("1.0", "end")
         text.insert("1.0", file_path)
+        text.config(state= DISABLED)
         continueButton.config(state= NORMAL)
 
 selectFileButton = Button(frame, text = "Select File", command=openFileDialog)
