@@ -56,6 +56,9 @@ def ConverterWindow(file_path):
     frame2 = Frame(root)
     frame2.pack()
 
+    frame3 = Frame(root)
+    frame3.pack()
+
     file_options = [
         "pdf",
         "pdf",
@@ -87,5 +90,10 @@ def ConverterWindow(file_path):
 
     convert_button = Button(frame2, text= 'Convert', command= convert)
     convert_button.grid(row=0, column=2, padx='5', pady='5')
+
+    file_path_text = Text(frame3, font=(25))
+    file_path_text.insert("1.0", file_path)
+    file_path_text.config(state= DISABLED)
+    file_path_text.pack(padx='5', pady='5')
 
     root.mainloop()
