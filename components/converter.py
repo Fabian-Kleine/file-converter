@@ -30,7 +30,6 @@ def ConverterWindow(file_path):
             new_file_path = asksaveasfile(mode= 'a', initialfile= file_name)
             result.file.save(new_file_path.name)
             errorMsg.config(text = 'Success!', foreground= 'green')
-            convert_button.config(text= 'Convert another file', state= NORMAL, command= openSelectWindow)
         except ApiError as api_error:
             error_message = str(api_error)
             start_index = error_message.find("Unsupported conversion")  # Find the starting index of the relevant information
@@ -40,12 +39,10 @@ def ConverterWindow(file_path):
 
             errorMsg.config(text=f'Conversion error: {unsupported_conversion_info}')
             print(unsupported_conversion_info)
-
-            convert_button.config(text='Convert', state=NORMAL)
         except Exception as error:
             errorMsg.config(text='An error occurred!')
             print(error)
-
+        finally:
             convert_button.config(text='Convert', state=NORMAL)
             
 
@@ -55,6 +52,9 @@ def ConverterWindow(file_path):
 
     frame = Frame(root)
     frame.pack()
+
+    frame2 = Frame(root)
+    frame2.pack()
 
     file_options = [
         "pdf",
@@ -82,7 +82,10 @@ def ConverterWindow(file_path):
     errorMsg = Label(frame, foreground= 'red')
     errorMsg.pack()
 
-    convert_button = Button(frame, text= 'Convert', command= convert)
-    convert_button.pack()
+    return_button = Button(frame2, text= 'Convert another file', command= openSelectWindow)
+    return_button.grid(row=0, column=0, padx='5', pady='5')
+
+    convert_button = Button(frame2, text= 'Convert', command= convert)
+    convert_button.grid(row=0, column=2, padx='5', pady='5')
 
     root.mainloop()
