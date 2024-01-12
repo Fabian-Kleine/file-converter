@@ -11,3 +11,5 @@ Put this secret into an .env file inside the root folder of the tool like this
 API_SECRET = <your_secret>
 ```
 Alternatively you can just start `main.py` which will give you a prompt to enter the API Secret.
+
+If you want to use the `.exe` of this programm switch to the `exe` branche and follow the guide there.
