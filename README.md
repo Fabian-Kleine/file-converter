@@ -7,4 +7,6 @@ Put this secret into an .env file inside the root folder of the tool like this
 ```javascript
 API_SECRET = <your_secret>
 ```
+
+Alternatively you can just start `main.py` which will give you a prompt to enter the API Secret.
  
