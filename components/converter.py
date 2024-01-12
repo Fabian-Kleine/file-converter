@@ -62,7 +62,9 @@ def ConverterWindow(file_path):
         "png",
         "jpg",
         "webp",
+        "svg",
         "html",
+        "md",
         "csv",
         "docx",
         "xlsx"
