@@ -12,4 +12,4 @@ API_SECRET = <your_secret>
 ```
 Alternatively you can just start `main.py` which will give you a prompt to enter the API Secret.
 
-If you want to use the `.exe` of this programm switch to the `exe` branche and follow the guide there.
+If you want to use the `.exe` of this programm switch to the [exe branche](https://github.com/Fabian-Kleine/file-converter/tree/exe) and follow the guide there.
