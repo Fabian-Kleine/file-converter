@@ -3,6 +3,9 @@ from tkinter.ttk import *
 from tkinter import messagebox
 from components import select, set_api_key
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 api_secret = os.getenv("API_SECRET")
 
